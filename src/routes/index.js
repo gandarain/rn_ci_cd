@@ -2,6 +2,7 @@ import React from 'react';
 import {Icon} from 'native-base';
 import HomeScreen from '../views/homeScreen';
 import ProfileScreen from '../views/profileScreen';
+import SettingScreen from '../views/settingScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -19,6 +20,8 @@ export default function Routes() {
               iconName = focused ? 'home' : 'home';
             } else if (route.name === 'Profile') {
               iconName = focused ? 'account' : 'account';
+            } else if (route.name === 'Setting') {
+              iconName = focused ? 'cog-outline' : 'cog-outline';
             }
             return (
               <Icon
@@ -35,6 +38,7 @@ export default function Routes() {
         }}>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Setting" component={SettingScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
